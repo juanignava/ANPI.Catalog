@@ -19,6 +19,10 @@ def newton_raphson(f, x0, tol, iterMax):
         k = k+1
         n = sp.N(f1.subs(x, xk)) # esto convierte de simbolico a numerico
         d = sp.N(df1.subs(x, xk))
+        """
+        Verificar que d sea diferente de 0 o que en valor 
+        absoluto sea menor a una tolerancia dada (10**-15)
+        """
         xk = xk - n/d
         err = abs(f1.subs(x,xk))
         er.append(sp.N(err))
