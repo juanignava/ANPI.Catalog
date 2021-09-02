@@ -6,7 +6,7 @@ function gradiente()
   
   f = '(x-2)^4 + (x-2*y)^2';
   x_0 = [0 3];
-  tol = 10^-5;
+  tol = 10^-9;
   iterMax = 1000;
   
   [x_k error] = metodo_GCNL(f, x_0, tol, iterMax)
@@ -89,7 +89,7 @@ function gradiente()
   endfor
   
   % Instrucciones de graficacion
-  eje_x = 0:length(err)-1
+  eje_x = 0:length(err)-1;
   plot(eje_x,err,'b','LineWidth',3, 'Marker', '*')
   title('Error absoluto vrs iteraciones')
   xlabel('Iteraciones (k)')
