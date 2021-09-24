@@ -4,7 +4,7 @@ function serie_taylor()
   
   clc; clear;
   
-  f = 'ln(x+1)';
+  f = 'exp(x)';
   tol = 10 ^-9;
   iterMax = 1000;
   x_var = 3;
