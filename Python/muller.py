@@ -5,18 +5,27 @@ import math
 
 def muller(f, x0, x1, x2, tol, iterMax):
 
-    """Esta  funcion  aproxima  numericamente  la  solucion  de una  ecuacionno  lineal  por  medio  del  
-       metodo  de la  Muller para un  intervalo  dado.
+    """Esta  funcion  aproxima  numericamente  la  solucion  de una  
+       ecuacion no  lineal  por  medio  del metodo  de la  Muller.
        
-       Parametros  de  entrada:    f = una  cadena  de  caracteres (string) que  representala  
-                                   funcion  que  esta  igualada a cero.
+       Parametros  de  entrada:    f = una  cadena  de  caracteres (string) 
+                                   que  representala funcion  que  esta  igualada 
+                                   a cero.
 
-                                   x0, x1, x2 =   son  los  valores iniciales que utiliza el método de Muller.
-                                   tol = corresponde a un valor  numerico  positivo  querepresenta  la  tolerancia  del  metodo.
-                                   iterMax = valor  numerico  positivo  que  representa  elnumero  maximo  de  iteraciones a realizar.
+                                   x0, x1, x2 =   son  los  valores iniciales que 
+                                   utiliza el método de Muller.
+
+                                   tol = corresponde a un valor  numerico  positivo  que
+                                   representa  la  tolerancia  del  metodo.
+
+                                   iterMax = valor  numerico  positivo  que  representa  el
+                                   numero  maximo  de  iteraciones a realizar.
                                    
-       Parametros  de  salida:     aprox = correpsonde a la  aproximacion  del  cero de la ecuacion.
+       Parametros  de  salida:     aprox = corresponde a la  aproximacion  del  cero 
+                                   de la ecuacion.
+
                                    err = es |f(xk)|, error  absoluto  del  metodo  para xk."""
+
 
     x = sp.Symbol('x')
     fun = sp.sympify(f)
@@ -36,20 +45,20 @@ def muller(f, x0, x1, x2, tol, iterMax):
         h1 = x0 - x2
         h2 = x1 - x2
 
-        a0 = f_x2
+        a0 = f_x2 # a
 
         a1 = (((d2 * pow(h1, 2)) -
             (d1 * pow(h2, 2))) /
-            ((h1 * h2) * (h1 - h2)))
+            ((h1 * h2) * (h1 - h2))) # b
         
         a2 = (((d1 * h2) - (d2 * h1)) /
-            ((h1 * h2) * (h1 - h2)))
+            ((h1 * h2) * (h1 - h2))) # c
         
         s = ((-2 * a0) / (a1 +
-            abs(math.sqrt(a1 * a1 - 4 * a0 * a2))))
+            abs(math.sqrt(a1 * a1 - 4 * a0 * a2)))) # 2c/(b+sgn(b)*(b**2-4ac)**0.5)
         
         p = ((-2 * a0) / (a1 -
-            abs(math.sqrt(a1 * a1 - 4 * a0 * a2))))
+            abs(math.sqrt(a1 * a1 - 4 * a0 * a2)))) # 2c/(b+sgn(b)*(b**2-4ac)**0.5)
 
         if (s >= p):
             aprox = s + x2

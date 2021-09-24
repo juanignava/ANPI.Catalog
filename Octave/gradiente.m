@@ -4,9 +4,10 @@ function gradiente()
   
   clc; clear;
   
-  f = '(x-2)^4 + (x-2*y)^2';
-  x_0 = [0 3];
-  tol = 10^-9;
+  %f = '(x-2)^4 + (x-2*y)^2';
+  f = '(x-2)^2 + (y+3)^2 + x*y';
+  x_0 = [1 1];
+  tol = 10^-4;
   iterMax = 1000;
   
   [x_k error] = metodo_GCNL(f, x_0, tol, iterMax)
