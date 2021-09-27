@@ -5,10 +5,10 @@ function ejemplo_gauss()
   
   x = gauss(A, b');
   
-  C = [[1 0]; [2 3]];
-  D = [2,3];
+  %C = [[1 0]; [2 3]];
+  %D = [2,3];
   
-  x = sust_adelante(C, D')
+  %x = sust_adelante(C, D')
   
 end
 
