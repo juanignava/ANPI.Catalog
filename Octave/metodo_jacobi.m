@@ -1,9 +1,9 @@
 function metodo_jacobi()
   
   clc; clear;
-  A=[10 1 -1 5;0 -7 1 1; 1 2 5 0;4 4 1 10];
+  A=[10 -2 1 -1;1 -20 1 1; 0 4 12 -6; -1 3 3 -8];
   b=[1 1 1 1]';
-  iterMax=1000;
+  iterMax= 3;
   tol=1e-5;
   dom = diag_dom(A);
   if dom ==1
@@ -45,14 +45,24 @@ function [xk k error] = jacobi(A, b, tol, iterMax)
   
   d=diag(A);
   D_inv=diag(1./d);
-  LpU=A-diag(d);
-  z=D_inv*b;
+  display("L + U")
+  LpU=A-diag(d)
+  display("D inversa por B")
+  z=D_inv*b
+  
 
-  xk=ones(4,1);
+  xk=ones(4,1)
 
   for k=1:iterMax
-    xk=-D_inv*LpU*xk+z;
-    error=norm(A*xk-b);
+    
+    display("Calculo de x: ")
+    xk=-D_inv*LpU*xk+z
+    
+    display("operacion de sistema")
+    opera= A*xk-b
+    
+    display("Error con norma")
+    error=norm(A*xk-b)
     if error<tol
       break
     end

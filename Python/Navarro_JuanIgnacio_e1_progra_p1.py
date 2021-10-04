@@ -59,7 +59,7 @@ def metodo_biseccion_mod(a, b, n, tol):
     return xk # Retornamos el valor aproximado
 
 # Ejemplo numérico
-y = metodo_biseccion_mod(0, 2, 10, 10**-10)
+y = metodo_biseccion_mod(0, 2, 10, 10**-5)
 print(y)
 
 
