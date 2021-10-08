@@ -26,9 +26,9 @@ function [xk k error] = falsa_posicion(f, a, b, tol, iterMax)
     
     for k=1:iterMax
       
-      xk = b - ((b-a)/(f(b)-f(a)))*f(b)
+      xk = b - ((b-a)/(f1(b)-f1(a)))*f1(b);
       
-      if f(a)*f(xk) < 0   
+      if f1(a)*f1(xk) < 0   
         b = xk;
       else
         a = xk;
