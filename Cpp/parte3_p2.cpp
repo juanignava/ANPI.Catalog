@@ -54,7 +54,7 @@ mat pseudoinversa(mat A, mat b, double alpha_1, double alpha_2, double tol, int 
         xk_n = Xk * b;
 
         // calculo del error
-        double error = norm(xk_n - xk) / norm(xk_n);
+        error = norm(xk_n - xk) / norm(xk_n);
 
         xk = xk_n;
 
@@ -92,7 +92,7 @@ int main(){
 
     mat x = pseudoinversa(A, b, alpha_1, alpha_2, tol, iterMax);
 
-    cout << "solucion al sistema" << endl;
+    cout << "\nSolucion al sistema" << endl;
     cout << x << endl;
 
     return 0;

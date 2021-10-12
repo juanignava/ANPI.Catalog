@@ -6,10 +6,22 @@ using namespace std;
 using namespace arma;
 
 mat generar_matriz(int rows, int columns) {
+    /*
+    Esta funcion permite generar una matriz de las dimensiones
+    especificadas donde los valores de cada uno de los elementos
+    de la matriz equivalen a A(i, j) = i**2 + j**2
+
+    Parametros de entrada:
+        rows, columns: corresponden a enteros que indican las
+        dimensiones de la matriz de salida.
+
+    Parametros de salida:
+        Result: corresponde a la matriz de las dimensiones especificadas
+        que cumple que A(i, j) = i**2 + j**2
+    */
 
     mat Result = zeros(rows, columns);
 
-    
     for (int i = 0; i < rows; i++)
     {
         
@@ -27,6 +39,17 @@ mat generar_matriz(int rows, int columns) {
 }
 
 double norma_frobenius(mat A) {
+    /*
+    Esta corresponde a la funcion auxiliar de la pseudoinversa
+    que permite calcular el error de los calculos. La norma de 
+    frobenius equivale a la raiz de la suma de los cuadrados de
+    cada uno de sus elementos.
+
+    Parametro de entrada: A-> Mztriz a la que se le desea calcular
+        la norma.
+    
+    Parametro de salida: norma-> norma de frobenius de A.
+    */
 
     int n = A.n_rows;
     int m = A.n_cols;
@@ -44,9 +67,9 @@ double norma_frobenius(mat A) {
         
     }
 
-    double root = sqrt(sum);
+    double norma = sqrt(sum);
 
-    return root;
+    return norma;
 
 }
 
@@ -92,10 +115,11 @@ mat pseudoinversa(mat A, double alpha_1, double alpha_2, double tol, int iterMax
         // calculo del error con norma de frobenius
         mat error_mat = A * Xk * A - A;
         error = norma_frobenius(error_mat);
+        cout << "Error en iteracion " << k << ":\t" << error << endl;
 
         // condicion de parada
         if (error < tol) {
-            cout << "Error asociado: " << error << endl;
+            cout << "\nError asociado final:\t" << error << endl;
             break;
         }
         
