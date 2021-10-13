@@ -58,7 +58,7 @@ def dd_newton(xv, yv):
     return pol_expand
 
 
-# Ejemplo numérico
+# Ejemplo numerico
 # usando los puntos:
 #   (-2, 0)
 #   (0, 1)
