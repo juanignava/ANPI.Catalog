@@ -19,9 +19,6 @@ def fun_Lk (xv, k):
     
     Lk_expand = sp.expand(Lk)
 
-    print("\nEl polinomio Lk de la iteracion " + str(k))
-    print(Lk_expand)
-
     return Lk_expand
 
 def lagrange(xv, yv):
@@ -62,5 +59,6 @@ def lagrange(xv, yv):
 #   (1, -1)
 xv = [-2, 0, 1]
 yv = [0, 1, -1]
+
 polinimio = lagrange(xv, yv)
 print(polinimio)
