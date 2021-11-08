@@ -56,9 +56,9 @@ def euler(f, intervalo, y0, num_puntos):
     plt.rcParams.update({'font.size': 14})
     fig, graf = plt.subplots()
     graf.plot(xv, yv, 'b', marker='o', markerfacecolor='red', markersize=10)
-    graf.set_xlabel('Iteraciones ($k$)')
-    graf.set_ylabel('$|f(x_K)|$')
-    graf.set_title('Metodo de la biseccion (Error vs Iteraciones)')
+    graf.set_xlabel('Solucion  ($y(x)$)')
+    graf.set_ylabel('$x$')
+    graf.set_title('Solucion de la ecuacion por medio del metodo de Euler')
     graf.grid(True)
     plt.show()
 
