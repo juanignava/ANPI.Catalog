@@ -23,5 +23,5 @@ y_g=y_s(x_g);
 plot(x_g,y_g,'b')
 
 title('Graficas de la solucion analitica (azul) y por medio del metodo (rojo)')
-  xlabel('y(x)')
-  ylabel('x')
+xlabel('x')
+ylabel('y(x)')

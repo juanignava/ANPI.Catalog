@@ -3,8 +3,8 @@ function ejemplo_lagrange()
   clc; clear;
   
   pkg load symbolic 
-  xv=[-2 0 1];
-  yv=[0 1 -1];
+  xv=[-2 0 1 2 3 4 5 56 67 656];
+  yv=[0 1 -1 1 2 3 4 54 323232 8];
 
   p=metodo_lagrange(xv,yv)
   

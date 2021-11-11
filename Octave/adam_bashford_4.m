@@ -4,8 +4,9 @@ function adam_bashford_4 ()
   clc; clear;
   f = '1 + (x-y)^2';
   inter = [2 4];
-  num_puntos = 11;
-  val_inicial = [1 1.191 1.5964 1.8883];
+  num_puntos = 6;
+  val_inicial = [1 1.191 1.5964 1.8883]; % puntos calculados inicialmente con el
+                                         % metodo de Euler
   [xv, yv, pol] = metodo_adam_bashford_4(f, inter, num_puntos, val_inicial)
   
   % Grafica de la solucion por medio del metodo (rojo)
