@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "-I/usr/include/python3.8",
                 "-lpython3",
-                "-larmadillo"
+                "-larmadillo",
+                "/usr/include/python3.8"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
