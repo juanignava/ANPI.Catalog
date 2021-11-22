@@ -13,11 +13,11 @@ function potencia()
   
   tol = 10^(-10);
     
-  [xk vectoresPropios] = metodo_potencia(A, x0, tol, iterMax);
+  [xk err] = metodo_potencia(A, x0, tol, iterMax)
     
 end
 
-function [xk vectoresPropios] = metodo_potencia(A, x0, tol, iterMax)
+function [xk err] = metodo_potencia(A, x0, tol, iterMax)
   
   % Esta funcion implementa el Metodo de la Potencia, el cual permite aproximar
   % el modulo del valor propio de mayor magnitud de una matriz dada.
