@@ -44,6 +44,9 @@ def simpson_compuesto(f, m, a, b):
 
     h = (b - a) / (m - 1)
 
+    print("valor de h")
+    print(h)
+
     x0 = a
 
     xn = b
@@ -54,7 +57,7 @@ def simpson_compuesto(f, m, a, b):
     for i in range(1, m - 1):
 
         xi = a + i * h
-
+        print("valor de preimagen: " + str(i) + " es: " + str(xi))
         xk.append(xi)
     
     sumaPares = 0
@@ -72,6 +75,9 @@ def simpson_compuesto(f, m, a, b):
     for i in range(0, len(xk), 2):
         
         sumaImpares += sp.N(f1.subs(x, xk[i]))
+
+    print("suma de los pares: " + str(sumaPares))
+    print("suma de los impares: " + str(sumaImpares))
 
     aprox = (h / 3) * (sp.N(f1.subs(x, x0)) + 2 * sumaPares + 4 * sumaImpares +
             sp.N(f1.subs(x, xn)))
@@ -91,10 +97,10 @@ def simpson_compuesto(f, m, a, b):
 
 # Ejemplo numerico
 
-f = 'ln(x)'
+f = 'exp(x)'
 m = 7
-a = 2
-b = 5
+a = 0
+b = 1
 
 y = simpson_compuesto(f, m, a, b)
 

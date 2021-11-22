@@ -18,6 +18,17 @@ def rayleigh(A, x0, iterMax, tol):
     Metodo de Rayleigh para aproximar
     el valor propio mas grande de la 
     matriz A
+
+    Parametros de entrada:
+        A: matriz a la cual se le calculara el valor propio
+            de mayor magnitud
+        x0: vector inicial del metodo iterativo
+        iterMax: cantidad de iteraciones maxima
+        tol: tolerancia de la condicion de parada
+
+    Parametros de salida:
+        sigma: corresponde a la aproximacion del valor propio
+            de mayor magnitud 
     """
 
     # valores iniciales

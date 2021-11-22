@@ -12,6 +12,15 @@ def runge_kutta_4(a, b, y0, m):
     """
     Metodo de runge kutta de orden 4 para encontrar la solucion al probleme
     y' = (x+y)/x con y(2) = 4
+
+    Parametros de entrada:
+        a, b: son los valores que limitan el intervalo en analisis
+        y0: es el valor inicial del problema
+        m: corresponde al numero de puntos a utilizr en el intervalo
+
+    Parametros de salida:
+        x_v, y_v: corresponden a los vectores de preimagenes e imagenes que
+            componen los puntos de la solucion aproximada
     """
 
     # definicion de la funcion

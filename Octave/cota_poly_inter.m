@@ -3,8 +3,8 @@ function cota_poly_inter()
   
   % Ejemplo numerico
   clc; clear;
-  f = 'sin(pi*x/2)';
-  xv = [-1 0 1 2];
+  f = '(1-2*(0.5+1))/5';
+  xv = [0 0.5 1];
   num_eval = 0.54;
   error = cota_poly(f, xv, num_eval)
 end
